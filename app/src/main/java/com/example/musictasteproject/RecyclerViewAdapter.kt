@@ -19,11 +19,11 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 
     class ViewHolder (view : View):RecyclerView.ViewHolder(view) {
         val nombre: TextView
-        val autor : TextView
+        //val autor : TextView
 
         init {
             nombre = view.findViewById(R.id.tv_nombre)
-            autor = view.findViewById(R.id.tv_autor)
+           // autor = view.findViewById(R.id.tv_autor)
         }
     }
 
@@ -34,10 +34,10 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nombre.text = canciones[position].nombre
-        holder.autor.text = canciones[position].autor
+       // holder.autor.text = canciones[position].autor
     }
 
     override fun getItemCount() = canciones.size
 
-    }
+
 }
