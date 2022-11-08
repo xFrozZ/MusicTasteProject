@@ -40,4 +40,3 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     override fun getItemCount() = canciones.size
 
     }
-}
