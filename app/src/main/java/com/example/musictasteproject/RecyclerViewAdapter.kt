@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(displayList: ArrayList<CancionModel>, canciones: Canciones) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>()
+    {
 
     var canciones : MutableList<CancionModel> = ArrayList()
     lateinit var context : Context
@@ -18,13 +20,31 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 
 
     class ViewHolder (view : View):RecyclerView.ViewHolder(view) {
+
+        val usuario: TextView
+        val username : TextView
         val nombre: TextView
-        //val autor : TextView
+        val autor : TextView
+        val imagen: ImageView
+        val rating: TextView
+        val comentario : TextView
+        val link: TextView
+
 
         init {
-            nombre = view.findViewById(R.id.tv_nombre)
-           // autor = view.findViewById(R.id.tv_autor)
+            usuario = view.findViewById(R.id.tv_usuario)
+            username = view.findViewById(R.id.tv_username)
+            nombre = view.findViewById(R.id.tv_cancion)
+            autor = view.findViewById(R.id.tv_autor)
+            imagen = view.findViewById(R.id.imagenCancion)
+            rating = view.findViewById(R.id.tv_rating)
+            comentario = view.findViewById(R.id.tv_comentario)
+            link = view.findViewById(R.id.tv_link)
+
+
         }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,10 +54,20 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nombre.text = canciones[position].nombre
-       // holder.autor.text = canciones[position].autor
+        holder.autor.text = canciones[position].autor
+        holder.usuario.text = canciones[position].usuario
+        holder.username.text = canciones[position].username
+        holder.rating.text = canciones[position].rating
+        holder.comentario.text = canciones[position].comentario
+        holder.link.text = canciones[position].link
+
+
+
+
     }
 
     override fun getItemCount() = canciones.size
 
+    
 
 }

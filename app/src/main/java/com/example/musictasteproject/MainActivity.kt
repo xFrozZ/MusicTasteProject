@@ -5,21 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btncanc: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        btncanc= findViewById(R.id.btnCanciones)
 
-        btncanc.setOnClickListener{
-            startActivity(Intent(this,Canciones::class.java))
+
+
+        val mainActbutton = findViewById<Button>(R.id.button3)
+
+        mainActbutton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
+/*
+        val main = findViewById<Button>(R.id.button5)
 
+        main.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+        }
+*/
     }
 }
