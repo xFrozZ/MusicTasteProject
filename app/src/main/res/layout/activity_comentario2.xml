@@ -51,8 +51,6 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F12323"
-        android:backgroundTint="#FF0000"
         android:hapticFeedbackEnabled="false"
         android:text="Enviar" />
 
